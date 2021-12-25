@@ -1,0 +1,8 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:    
+  - name: Create a Statefulset by reading the definition from a local file
+    kubernetes.core.k8s:
+      state: present
+      namespace: whitemist49
+      src: statefulset.yaml  

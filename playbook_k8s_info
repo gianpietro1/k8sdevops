@@ -1,0 +1,15 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Get a list of all pods from any namespace
+    kubernetes.core.k8s_info:
+      kind: Pod
+      namespace: whitemist49
+      label_selectors:
+        - app = nginx
+    register: pod_list 
+  - debug:
+      msg: "{{ pod_list }}"
+  - copy:
+      content: '{{ pod_list }}'
+      dest: pod_list.json
