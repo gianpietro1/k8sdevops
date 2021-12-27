@@ -4,7 +4,7 @@
   - name: Get a list of all pods from any namespace
     kubernetes.core.k8s_info:
       kind: Pod
-      namespace: whitemistXX
+      namespace: whitemist42
       label_selectors:
         - app = nginx
     register: pod_list 
