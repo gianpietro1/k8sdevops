@@ -4,5 +4,5 @@
   - name: Create a Statefulset by reading the definition from a local file
     kubernetes.core.k8s:
       state: present
-      namespace: whitemistXX
+      namespace: whitemist48
       src: statefulset.yaml  
